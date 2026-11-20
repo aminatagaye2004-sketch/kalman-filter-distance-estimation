@@ -29,42 +29,46 @@ A scalar Kalman filter was implemented using a constant-distance state model.
 
 **Prediction:**
 
-\[
-\hat{x}_k^-=\hat{x}_{k-1}
-\]
+$$
+\hat{x}_k^- = \hat{x}_{k-1}
+$$
 
-\[
-P_k^-=P_{k-1}+Q
-\]
+$$
+P_k^- = P_{k-1} + Q
+$$
 
 **Kalman gain:**
 
-\[
-K_k=\frac{P_k^-}{P_k^-+R}
-\]
+$$
+K_k = \frac{P_k^-}{P_k^- + R}
+$$
 
 **Measurement update:**
 
-\[
-\hat{x}_k=\hat{x}_k^-+K_k(z_k-\hat{x}_k^-)
-\]
+$$
+\hat{x}_k = \hat{x}_k^- + K_k(z_k - \hat{x}_k^-)
+$$
 
 **Covariance update:**
 
-\[
-P_k=(1-K_k)P_k^-
-\]
+$$
+P_k = (1-K_k)P_k^-
+$$
 
-Where:
+**Where:**
 
-- \(\hat{x}_k\): Estimated distance
-- \(z_k\): Sensor measurement
-- \(P_k\): Estimation uncertainty
-- \(Q\): Process noise variance
-- \(R\): Measurement noise variance
-- \(K_k\): Kalman gain
+- $\hat{x}_k$: Estimated distance
+- $z_k$: Sensor measurement
+- $P_k$: Estimation uncertainty
+- $Q$: Process noise variance
+- $R$: Measurement noise variance
+- $K_k$: Kalman gain
 
-The process noise variance was set to \(Q=1\text{ mm}^2\). Measurement noise variance \(R\) was estimated from calibration data for each experimental condition.
+The process noise variance was set to $Q = 1\ \mathrm{mm}^2$.
+Measurement noise variance $R$ was estimated from calibration data for each experimental condition.
+
+
+
 
 ### Experiment 1: Static Distance Measurements
 
